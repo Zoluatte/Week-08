@@ -137,17 +137,62 @@ namespace ConsoleAppArray
 
 ``` text
 
-บันทึกผลการทดลอง
-
-
+ขึ้น error เนื่องจากว่ากำหนดขนาดของ array ไว้แค่ 10 นั้นหมายถึง ตั้งแต่ 0 - 9 element ที่ 10 จึงไม่มี
 
 ```
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[0] = 0;
+            data[1] = 1;
+            data[2] = 2;
+            data[3] = 3;
+            data[4] = 4;
+            data[5] = 5;
+            data[6] = 6;
+            data[7] = 7;
+            data[8] = 8;
+            data[9] = 9;
+            Console.WriteLine(data[0]);
+            Console.WriteLine(data[1]);
+            Console.WriteLine(data[2]);
+            Console.WriteLine(data[3]);
+            Console.WriteLine(data[4]);
+            Console.WriteLine(data[5]);
+            Console.WriteLine(data[6]);
+            Console.WriteLine(data[7]);
+            Console.WriteLine(data[8]);
+            Console.WriteLine(data[9]);
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![array](./images/การสร้างการกำหนดค่าและการเข้าถึงสมาชิกในอาร์เรย์.PNG)
 
 ## แบบฝึกหัด
 
 จงประกาศและสร้างตัวแปรสำหรับอาร์เรย์ ที่สอดคล้องกับเงื่อนไขที่กำหนด
 
-![](./images/table-08-01.png)
+![array](./images/table-08-01.png)
+
+```csharp
+//ข้อ2
+float[] stuGPA = new float[45];
+
+//ข้อ3
+string[] province = new string[78];
+
+```
 
 ### 2.1.2 การอ้างถึงสมาชิกในอาร์เรย์
 
@@ -181,22 +226,159 @@ namespace ConsoleAppArray
 
 ``` text
 
-บันทึกผลการทดลอง
-
-
+error เนื่องจาก element มีแค่ 0-9 ไม่มี -1 และ 10 เพราะได้ประกาศส้ราง array มีขนาด แค่ 10 element เท่านั้น
 
 ```
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[1] = 1;
+            data[9] = 9;
+            Console.WriteLine(data[-1]);
+            Console.WriteLine(data[1]);
+            Console.WriteLine(data[9]);
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![array](./images/การอ้างถึงสมาชิกในอาร์เรย์.PNG)
 
 ### แบบฝึกหัด
 
 จากโปรแกรมในข้อ 2.1.2 จงเขียนบรรทัดคำสั่ง ตามเงื่อนไขต่อไปนี้
 
 1. นำค่าจากข้อมูลในลำดับที่ 7 ของอาร์เรย์มาแสดงผลบนจอภาพ
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[1] = 1;
+            data[9] = 9;
+            Console.WriteLine(data[7]);
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![array](./images/ar_ex1.PNG)
 2. นำค่าที่ได้จากข้อมูลในลำดับที่ 4 และ 9 ของอาร์เรย์มาบวกกัน แล้วแสดงผลบนจอภาพ
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[1] = 1;
+            data[9] = 9;
+            Console.WriteLine(data[4]);
+            Console.WriteLine(data[9]);
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![araay](./images/ar_ex2.PNG)
+
 3. ทดสอบว่าข้อมูลในลำดับที่ 2 และ 6 ของอาร์เรย์เท่ากันหรือไม่ แล้วแสดงผลบนจอภาพ
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[1] = 1;
+            data[9] = 9;
+
+            Console.WriteLine(data[2] == data[6] ? "Equal" : "NOT Equal");
+
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![array](./images/ar_ex3.PNG)
+
 4. คำนวณผลรวมของข้อมูลทั้งหมดในอาร์เรย์ พร้อมทั้งแสดงผลบนจอภาพ
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[1] = 1;
+            data[9] = 9;
+            Console.WriteLine(data.sum());)
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![array](./images/ar_ex4.PNG)
+
 5. เขียนโปรแกรมวนรอบเพื่อแสดงค่าทั้งหมดในอาร์เรย์
 
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            data[1] = 1;
+            data[9] = 9;
+            Console.WriteLine(data.sum());)
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![array](./images/ar_ex5.PNG)
 ### 2.1.3 การตรวจสอบจำนวนสมาชิกในอาร์เรย์
 
 เราสามารถตรวจสอบขนาดของอาร์เรย์ได้จาก field ที่ชื่อ length
@@ -208,36 +390,30 @@ namespace ConsoleAppArray
 {
     class Program
     {
-    	static void Main(string[] args)
-    	{
-        	int[] data = new int[10];
-        	Student[] student = new Student[31];
-           Console.WriteLine(data.Length);
-        	Console.WriteLine(student.Length);
-        	Console.ReadLine();
-    	}
+        static void Main(string[] args)
+        {
+            int[] data = new int[10];
+            Student[] student = new Student[31];
+            Console.WriteLine(data.Length);
+            Console.WriteLine(student.Length);
+            Console.ReadLine();
+        }
        class Student     // nested class
        {
            private string name;
            public string Name
            {
-              get { return name; }
-            	set { name = value; }
+                get { return name; }
+                set { name = value; }
            }
-    	}
+        }
     }
 }
 ```
 
 ➢	รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![array](./images/การตรวจสอบจำนวนสมาชิกในอาร์เรย์.PNG)
 
 
 ### 2.1.4 การกำหนดค่าเริ่มต้นให้สมาชิกในอาร์เรย์
@@ -257,8 +433,8 @@ namespace ConsoleAppArray
 {
     class Program
     {
-    	static void Main(string[] args)
-    	{
+        static void Main(string[] args)
+        {
             int[] data = { 51, 58, 14, 20, -5, 61, 7, 21, 6 };
             Console.WriteLine("Length of data = {0}", data.Length);
             for (int i = 0; i < data.Length; i++)
@@ -273,14 +449,7 @@ namespace ConsoleAppArray
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
-
+![array](./images/การกำหนดค่าเริ่มต้นให้สมาชิกในอาร์เรย์.PNG)
 
 ### แบบฝึกหัด
 
@@ -288,13 +457,77 @@ namespace ConsoleAppArray
 a.	คะแนน GPS รายเทอม  
 b.	คะแนน GPA  
 
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float[] gps = new float[8];
+            for (int i = 0; i < gps.Length; i++)
+            {
+                Console.Write($"Enter GPS term{i + 1} : ");
+                gps[i] = float.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("about GPS");
+
+            foreach (float j in gps)
+            {
+                Console.Write($"{j , 0:N} ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("GPA is {0 , 0:N}", gps.Sum() / gps.Length);
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![array-Exercise](./imagse/)
+
 2.	การคำนวณชื่อวันในแต่ละเดือน สามารถทำได้เมื่อทราบว่าวันที่ 1  ของแต่ละเดือน ตรงกับวันอะไร จากนั้นกำหนดเลขประจำชื่อวัน ได้แก่ อาทิตย์ = 0, จันทร์ = 1, … , ศุกร์ = 5 และ  เสาร์ = 6  นำวันที่ที่ต้องการทราบ มาบวกด้วยเลขประจำชื่อวันของวันที่ 1 เสร็จแล้วให้ลบด้วย 1 แล้วไป mod ด้วย 7 จะได้เศษซึ่งสามารถบอกเป็นชื่อวันได้ เช่น วันที่ 1 กันยายน 2560 ตรงกับวันศุกร์ ถ้าต้องการทราบว่าวันที่ 15 กันยายน ตรงกับวันใด จะคำนวณได้จาก 15 (วันที่ที่ต้องการทราบ)  + 5 (เลขประจำวันที่ 1 เดือนกันยายน 2560) - 1 = 19 จากนั้นนำ 19 ไป  mod (%) ด้วย 7  ได้เศษ 5 หมายถึงวันศุกร์ หรือวันที่ 14 เดือนมีนาคม 2560 สามารถหาได้จาก (14 + 3 - 1) % 7 = 2 ตรงกับวัน อังคาร เป็นต้น (ในที่นี้ใช้เลข 3 เนื่องจากวันที่ 1 มีนาคม 2560 คือวันพุธ)  
-a.	ให้สร้างอาร์เรย์ที่มีขนาดเป็น 12 แล้วเก็บเลขประจำวันของวันที่ 1   ในแต่ละเดือน ของปี พ.ศ. 2560  
+a.	ให้สร้างอาร์เรย์ที่มีขนาดเป็น 12 แล้วเก็บเลขประจำวันของวันที่ 1   ในแต่ละเดือน ของปี พ.ศ. 2561
 b.	แสดงข้อความรับค่าวันที่และเดือนจากผู้ใช้  
 c.	คำนวณตามอัลกอริทึมที่อธิบายในโจทย์  
 d.	แสดงชื่อวันออกทางหน้าจอในรูปแบบ  `dd/mm/yyyy is <day name>`.
 
- 
+```csharp
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] month = { 2, 5, 5, 1, 3, 6, 1, 4, 0, 2, 5, 0 };
+        string[] days =
+        {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Tuesday",
+            "Friday",
+            "Saturday",            };
+        Console.Write("Enter date : ");
+        int date = int.Parse(Console.ReadLine());
+        Console.Write("Enter month: ");
+        int inmonth = int.Parse(Console.ReadLine());
+
+        int day = (date + month[inmonth - 1] - 1) % 7;
+
+        Console.WriteLine($"{date}/{inmonth}/2561 is {days[day]}");
+        Console.Read();
+    }
+}
+```
+
+![array_ex](./images/ar2_ex2.PNG)
+
 ## 2.2 การปฏิบัติการต่างๆ บนอาร์เรย์
 
 ### 2.2.1 การค้นหาสมาชิกในอาร์เรย์
@@ -342,13 +575,7 @@ namespace ConsoleAppArray
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![array2](./images/การค้นหาสมาชิกในอาร์เรย์.PNG)
 
 ### แบบฝึกหัด
 
@@ -356,9 +583,81 @@ namespace ConsoleAppArray
 a. ค้นหาชื่อเดือนแรกที่มีความยาวน้อยที่สุด  
 b. ค้นหาชื่อเดือนแรกที่มีความยาวมากกว่า 10 ตัวอักษร  
 c. ค้นหาชื่อเดือนที่มีตัวอักษรตัวแรกเหมือนเดือนมกราคม แล้วนำมาแสดงรวมกันในบรรทัดเดียว คั่นด้วย ,
+
+```csharp
+ using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] month = {
+                "January",
+                "February",
+                "March",
+                "Aprill",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "November",
+                "December",
+            };
+            //ข้อ a
+            Console.WriteLine("little size : " + Array.Find(month, element => element.Length == 3));
+            //ข้อ b
+            Console.WriteLine("Long than 10 : " + Array.Find(month, element => element.Length > 10));
+            //ข้อ c
+            Console.WriteLine("start of J : " + string.Join(",", Array.FindAll(month, element => element.StartsWith("J", StringComparison.Ordinal))));
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![array_exercis](./images/ar3_ex1.PNG)
+
 2.	สร้างอาร์เรย์ ที่เก็บประเทศต่างๆ ในโลก (ภาษาอังกฤษ)  
 a.	หาชื่อประเทศที่ลงท้ายด้วยคำว่า แลนด์  “land”  
 b.	หาชื่อประเทศที่ลงท้ายด้วยคำว่า สถาน “stan”  
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] month = {
+                "January",
+                "February",
+                "March",
+                "Aprill",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "November",
+                "December",
+            };
+            //ข้อ a
+            Console.WriteLine("little size : " + Array.Find(month, element => element.Length == 3));
+            //ข้อ b
+            Console.WriteLine("Long than 10 : " + Array.Find(month, element => element.Length > 10));
+            //ข้อ c
+            Console.WriteLine("start of J : " + string.Join(",", Array.FindAll(month, element => element.StartsWith("J", StringComparison.Ordinal))));
+            Console.ReadLine();
+        }
+    }
+}
+```
+
  __หมายเหตุ__ รายการชื่อประเทศดูได้จาก https://www.dotnetperls.com/country-array
 หรือ fork ได้จาก https://github.com/RodrigoEspinosa/POP3.git ซึ่งอยู่ในไฟล์ https://github.com/RodrigoEspinosa/POP3/blob/master/POP3/POP3/AuxiliaryClases/CountryArray.cs
 
@@ -427,19 +726,62 @@ namespace ConsoleAppArray
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![arraySort](./images/การใช้งานเมธอดArray.Sort().PNG)
 
 ### แบบฝึกหัด
 
 1. สร้างอาร์เรย์ ที่เก็บชื่อเดือน ในภาษาอังกฤษ  
 a. เรียงลำดับชื่อตามตัวอักษรจากน้อยไปมาก  
+
+![arr](./images/ar4_ex1a.PNG)
+
 b. เรียงลำดับชื่อตามตัวอักษรจากมากไปน้อย  
+
+![arr](./images/ar4_ex1b.PNG)
+
+```csharp
+using System;
+using System.Linq;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] month =
+            {
+                "January",
+                "February",
+                "March",
+                "Aprill",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "November",
+                "December"
+            };
+
+            //var sortedValues = from x in month
+            //                   orderby x.Length descending, x descending
+            //                   select x;
+
+            var sortedValues = from x in month
+                               orderby x.Length, x
+                               select x;
+
+            foreach (string str in sortedValues)
+            {
+                Console.WriteLine(str);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+```
+
 2. สร้างอาร์เรย์ ที่เก็บประเทศต่างๆ ในโลก (ภาษาอังกฤษ)  
 a. เรียงลำดับชื่อตามตัวอักษรจากน้อยไปมาก  
 b. เรียงลำดับชื่อตามตัวอักษรจากมากไปน้อย  
@@ -506,22 +848,343 @@ namespace ConsoleAppArray
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![arr](./images/การคัดลอกข้อมูลในอาร์เรย์.PNG)
 
 ## แบบฝึกหัด
 
 1. สร้างอาร์เรย์ ที่เก็บชื่อเดือน ในภาษาอังกฤษ  
 a. คัดลอกชื่อเดือนที่ลงท้ายด้วย “ber” มาไว้ในอาร์เรย์ใหม่  
+
+![arr](./images/ar5_ex1a.PNG)
+
 b. คัดลอกชื่อเดือนที่ลงท้ายด้วย “ry” มาไว้ในอาร์เรย์ใหม่  
+
+![arr](./images/ar5_ex1b.PNG)
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] month =
+            {
+                "January",
+                "February",
+                "March",
+                "Aprill",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "November",
+                "December"
+            };
+
+            string[] month_er = Array.FindAll(month, ele => ele.EndsWith("ber"));
+            string[] copy_er = new string[month_er.Length];
+            Array.Copy(month_er, copy_er, month_er.Length);
+
+            string[] month_ry = Array.FindAll(month, ele => ele.EndsWith("ry"));
+            string[] copy_ry = new string[month_ry.Length];
+            Array.Copy(month_ry, copy_ry, month_ry.Length);
+
+            //foreach (string str in copy_er)
+            //    Console.WriteLine(str);
+
+            foreach(string str in copy_ry)
+                Console.WriteLine(str);
+
+            Console.ReadLine();
+        }
+    }
+}
+```
+
 2. สร้างอาร์เรย์ ที่เก็บประเทศต่างๆ ในโลก (ภาษาอังกฤษ)  
 a. คัดลอกชื่อประเทศที่ลงท้ายด้วย “land” มาไว้ในอาร์เรย์ใหม่  
+
+![arr](./images/ar5_ex1a.PNG)
+
 b. คัดลอกชื่อประเทศที่ลงท้ายด้วย “stan” มาไว้ในอาร์เรย์ใหม่
+
+![arr](./images/ar5_ex1b.PNG)
+
+```csharp
+using System;
+
+namespace ConsoleAppArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] country =
+            {
+                "Afghanistan",
+                "Albania",
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antarctica",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Barbados",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Bouvet Island",
+                "Brazil",
+                "British Indian Ocean Territory",
+                "Brunei Darussalam",
+                "Bulgaria",
+                "Burkina Faso",
+                "Burundi",
+                "Cambodia",
+                "Cameroon",
+                "Canada",
+                "Cape Verde",
+                "Cayman Islands",
+                "Central African Republic",
+                "Chad",
+                "Chile",
+                "China",
+                "Christmas Island",
+                "Cocos (Keeling) Islands",
+                "Colombia",
+                "Comoros",
+                "Congo",
+                "Congo, the Democratic Republic of the",
+                "Cook Islands",
+                "Costa Rica",
+                "Cote D'Ivoire",
+                "Croatia",
+                "Cuba",
+                "Cyprus",
+                "Czech Republic",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Eritrea",
+                "Estonia",
+                "Ethiopia",
+                "Falkland Islands (Malvinas)",
+                "Faroe Islands",
+                "Fiji",
+                "Finland",
+                "France",
+                "French Guiana",
+                "French Polynesia",
+                "French Southern Territories",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Gibraltar",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guadeloupe",
+                "Guam",
+                "Guatemala",
+                "Guinea",
+                "Guinea-Bissau",
+                "Guyana",
+                "Haiti",
+                "Heard Island and Mcdonald Islands",
+                "Holy See (Vatican City State)",
+                "Honduras",
+                "Hong Kong",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Iran, Islamic Republic of",
+                "Iraq",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Jamaica",
+                "Japan",
+                "Jordan",
+                "Kazakhstan",
+                "Kenya",
+                "Kiribati",
+                "Korea, Democratic People's Republic of",
+                "Korea, Republic of",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Lao People's Democratic Republic",
+                "Latvia",
+                "Lebanon",
+                "Lesotho",
+                "Liberia",
+                "Libyan Arab Jamahiriya",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Macao",
+                "Macedonia, the Former Yugoslav Republic of",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Mali",
+                "Malta",
+                "Marshall Islands",
+                "Martinique",
+                "Mauritania",
+                "Mauritius",
+                "Mayotte",
+                "Mexico",
+                "Micronesia, Federated States of",
+                "Moldova, Republic of",
+                "Monaco",
+                "Mongolia",
+                "Montserrat",
+                "Morocco",
+                "Mozambique",
+                "Myanmar",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "Netherlands Antilles",
+                "New Caledonia",
+                "New Zealand",
+                "Nicaragua",
+                "Niger",
+                "Nigeria",
+                "Niue",
+                "Norfolk Island",
+                "Northern Mariana Islands",
+                "Norway",
+                "Oman",
+                "Pakistan",
+                "Palau",
+                "Palestinian Territory, Occupied",
+                "Panama",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Philippines",
+                "Pitcairn",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Reunion",
+                "Romania",
+                "Russian Federation",
+                "Rwanda",
+                "Saint Helena",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Pierre and Miquelon",
+                "Saint Vincent and the Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Senegal",
+                "Serbia and Montenegro",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "Somalia",
+                "South Africa",
+                "South Georgia and the South Sandwich Islands",
+                "Spain",
+                "Sri Lanka",
+                "Sudan",
+                "Suriname",
+                "Svalbard and Jan Mayen",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Syrian Arab Republic",
+                "Taiwan, Province of China",
+                "Tajikistan",
+                "Tanzania, United Republic of",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tokelau",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkey",
+                "Turkmenistan",
+                "Turks and Caicos Islands",
+                "Tuvalu",
+                "Uganda",
+                "Ukraine",
+                "United Arab Emirates",
+                "United Kingdom",
+                "United States",
+                "United States Minor Outlying Islands",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela",
+                "Viet Nam",
+                "Virgin Islands, British",
+                "Virgin Islands, US",
+                "Wallis and Futuna",
+                "Western Sahara",
+                "Yemen",
+                "Zambia",
+                "Zimbabwe"
+            };
+
+            string[] coun_land = Array.FindAll(country, ele => ele.EndsWith("land"));
+            string[] copy_land = new string[coun_land.Length];
+            Array.Copy(coun_land, copy_land, coun_land.Length);
+
+            string[] coun_stan = Array.FindAll(country, ele => ele.EndsWith("stan"));
+            string[] copy_stan = new string[coun_stan.Length];
+            Array.Copy(coun_stan, copy_stan, coun_stan.Length);
+
+            foreach (string str in copy_land)
+               Console.WriteLine(str);
+
+            foreach (string str in copy_stan)
+                Console.WriteLine(str);
+
+            Console.ReadLine();
+        }
+    }
+}
+```
 
 ## อาร์เรย์หลายมิติ
 
@@ -612,13 +1275,7 @@ namespace MultidimensionalArray
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![mul_1](./images/mul_1.PNG)
 
 ### แบบฝึกหัด
 
@@ -626,8 +1283,51 @@ namespace MultidimensionalArray
 
 ![](./images/table-08-03.png)
 
+```csharp
+//ข้อ 2
+string[,] charecter = new string[26,2];
+
+//ข้อ 3
+int[,] day = new int[12,2];
+
+//ข้อ 4
+float[,,] cube = new float[3,3,3];
+```
+
 2. จงแก้ตารางสูตรคูณในข้อ 2.3.1 ให้สมบูรณ์ โดยใช้วิธีการวนลูปสำหรับกำหนดค่าให้อาร์เรย์แทนที่จะประกาศรายตัวเช่นดังในตัวอย่าง
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MultidimensionalArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] multiplyTable = new int[12, 12];
+            for (int row = 0; row < multiplyTable.GetLength(0); row++)
+            {
+                for (int col = 0, mul = 2; col < multiplyTable.GetLength(1); col++, mul++)
+                {
+                    if(mul == 13)
+                        continue;
+                    Console.Write("{0 , 3} ", mul * (row + 1));
+                    //Console.Write($"{row},{col} ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![mul1_ex2](./images/mul1_ex2.PNG)
 ## 2.4 อาร์เรย์ของอาเรย์ (jagged array)
 
 อาร์เรย์ของอาเรย์จะมีลักษณะต่างจากอาร์เรย์หลายมิติที่เราศึกษาไปในหัวข้อ 2.3  
@@ -701,22 +1401,73 @@ namespace ArrayOfArray
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![jg_1](./images/jg_1.PNG)
 
 ### แบบฝึกหัด
 
 1. สร้าง Jagged array ที่มีขนาด 2 แถว โดยแถวที่ 1 บรรจุชื่อวันทั้ง 7 วัน และแถวที่ 2 บรรจุชื่อเดือนทั้ง 12 เดือน
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ArrayOfArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[][] day = new string[2][];
+            day[0] = new[] {
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            };
+
+            day[1] = new[] {
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            };
+
+            for (int i = 0; i < day.Length; i++)
+            {
+                for (int j = 0; j < day[i].Length; j++)
+                {
+                    Console.WriteLine("array[{0}][{1}] = {2}", i, j, day[i][j]);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+![jg1_ex1](./images/jg1_ex1.PNG)
+
 2. สร้าง Jagged array ที่บรรจุชื่อประเทศต่างๆ แบ่งตามพื้นที่ทวีป โดยอ้างอิงจาก รายชื่อประเทศ ดินแดน และเมืองหลวง
 
 ## 3. Collection
 
-ถึงแม้ว่าเราจะสามารถใช้งานอาร์เรย์ในการเก็บและจัดการกับข้อมูล แต่การใช้อาร์เรย์ก็มีข้อจำกัดหลายๆ อย่าง เช่น อาร์เรย์เป็นหน่วยเก็บข้อมูลที่มีขนาดคงที่ ซึ่งถูกกำหนดในขณะสร้างอาร์เรย์ อีกทั้งสมาชิกในอาร์เรย์จะต้องเป็นข้อมูลชนิดเดียวกันเท่านั้น ซึ่งก็ต้องระบุในขณะสร้างอาร์เรย์เช่นกัน ดังนั้นในการพัฒนา .NET Framework Class Library (FCL) จึงได้มีการจัดเตรียมคลาสที่เป็น collection ที่ทำงานกับโครงสร้างข้อมูลแบบต่างๆ ซึ่งอยู่ในเนมสเปซที่ชื่อ  System.Collection
+ถึงแม้ว่าเราจะสามารถใช้งานอาร์เรย์ในการเก็บและจัดการกับข้อมูล แต่การใช้อาร์เรย์ก็มีข้อจำกัดหลายๆ อย่าง เช่น อาร์เรย์เป็นหน่วยเก็บข้อมูลที่มีขนาดคงที่ ซึ่งถูกกำหนดในขณะสร้างอาร์เรย์ อีกทั้งสมาชิกในอาร์เรย์จะต้องเป็นข้อมูลชนิดเดียวกันเท่านั้น ซึ่งก็ต้องระบุในขณะสร้าง��าร์เรย์เช่นกัน ดังนั้นในการพัฒนา .NET Framework Class Library (FCL) จึงได้มีการจัดเตรียมคลาสที่เป็น collection ที่ทำงานกับโครงสร้างข้อมูลแบบต่างๆ ซึ่งอยู่ในเนมสเปซที่ชื่อ  System.Collection
 ตารางต่อไปนี้แสดง collection class ที่ใช้งานบ่อย
 
 ![](./images/table-08-04.png)
@@ -769,19 +1520,25 @@ namespace ArrayListDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![al_1](./images/al_1.PNG)
 
 ### คำถาม
 
 1. เมื่อความจำนวนสมาชิกในอาร์เรย์ลิสต์ (Count) เพิ่มขึ้นถึงค่าเท่าใดบ้างจึงจะมีการเพิ่มค่าความจุ (Capacity)
+
+```text
+
+capacity จะเพิ่มขึ้นเมื่อ count ค่าเพิ่มจนมีจำนวนเท่ากับ Capacity นับจากตอนเปลี่ยน
+
+```
+
 2. การเพิ่มค่าความจุในอาร์เรย์ลิสต์มีลักษณะเป็นอย่างไร
 
+```text
+
+เพิ่มขนาดเป็นสองเท่าของตัวมันเอง
+
+```
 
 ### 3.1.2 การตรวจสอบความจุและขนาดของอาร์เรย์ลิสต์
 
@@ -818,18 +1575,27 @@ namespace ArrayListDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![al_2](./images/al_2.PNG)
 
 ### คำถาม
 
 1. เหตุใด ค่าของ Count และ Capacity จึงไม่เท่ากัน
+
+```text
+
+Count เป็นจำนวนสมชิกที่อยู่ใน ArrayList
+Capacity เป็นขนาดความจุของ ArrayList
+ซึ่งในแต่ละ ArrayList มีสมาชิกและขนาดไม่เท่ากัน
+
+```
+
 2. ถ้ามีการลบสมาชิกออกจากอาร์เรย์ลิสต์ (Count) จะมีการลดความจุ  (Capacity) ลงในหรือไม่ ถ้าลดลงจะเป็นลักษณะเดียวกับตอนเพิ่มขึ้นหรือไม่
+
+```text
+
+ไม่ลดลง
+
+```
 
 ### 3.1.3 การเข้าถึงสมาชิกในอาร์เรย์ลิสต์แบบต่างๆ
 
@@ -872,18 +1638,70 @@ namespace ArrayListDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
+![al_3](./images/al_3.PNG)
 
-บันทึกผลการทดลอง
+```text
 
-
+list2 นั้นมีการกำหนดสมาชิกแบบผิดวิธี
 
 ```
+```csharp
+using System;
+using System.Collections;
+
+namespace ArrayListDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList list1 = new ArrayList();
+            list1.Add(10);
+            list1.Add(20);
+            list1.Add(30);
+            list1.Add(40);
+
+            Console.WriteLine("list1");
+            for (int i = 0; i < list1.Count; i++)
+            {
+                Console.WriteLine(list1[i]);
+            }
+            ArrayList list2 = new ArrayList(list1);
+            list.Clear();
+            list2.Add(55);
+            list2.Add(66);
+            list2.Add(77);
+
+            Console.WriteLine("list2");
+            for (int i = 0; i < list2.Count; i++)
+            {
+                Console.WriteLine(list2[i]);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![al_31](./images/al_31.PNG)
 
 ## คำถาม
 
 1. เราสามารถกำหนดค่าให้กับสมาชิกอาร์เรย์ลิสต์แบบเดียวกับอาร์เรย์ธรรมดา (เช่น `list[1] = 5;`) ได้หรือไม่อย่างไร
+
+```text
+
+ไม่ได้ เนื่องจาก arraylist นั้นเป็น collection การสมาชิกจึงต้องเรียนใช้ method
+
+```
+
 2. เราสามารถใช้การอ้างถึงตำแหน่งโดยการคำนวณได้หรือไม่ (เช่น `int a =list[1*2];`)
+
+```text
+
+ทำได้ เพราะคอมพิวเตอร์ทำการคำนวนตัวเลขก่อน
+
+```
 
 ## งานค้นคว้า
 
@@ -958,13 +1776,7 @@ namespace QueueDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![q_1](./images/q_1.PNG)
 
 ### 3.2.2 การตรวจสอบสมาชิกในคิวด้วยเมธอด Contains()
 
@@ -1003,13 +1815,7 @@ namespace QueueDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![q_2](./images/q_2.PNG)
 
 ### 3.2.3 การล้างข้อมูลในคิวด้วยเมธอด Clear()
 
@@ -1043,13 +1849,7 @@ namespace QueueDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![q_3](./images/q_3.PNG)
 
 ### 3.2.4 การคัดลอกข้อมูลในคิวมายังอาร์เรย์ด้วยเมธอด ToArray()
 
@@ -1090,13 +1890,7 @@ namespace QueueDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![q_4](./images/q_4.PNG)
 
 ## 3.3 สแตค (Stack)
 
@@ -1159,13 +1953,7 @@ namespace StackDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![s_4](./images/s_4.PNG)
 
 ### 3.3.2 การตรวจสอบสมาชิกในสแตคด้วยเมธอด Contains()
 
@@ -1206,13 +1994,7 @@ namespace StackDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![s_2](./images/s_2.PNG)
 
 ### 3.3.3 การล้างข้อมูลในสแตคด้วยเมธอด Clear()
 
@@ -1252,13 +2034,7 @@ namespace StackDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![s_3](./images/s_3.PNG)
 
 ### 3.3.4 การคัดลอกข้อมูลในคิวมายังอาร์เรย์ด้วยเมธอด ToArray()
 
@@ -1299,13 +2075,7 @@ namespace QueueDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![s_4](./images/s_4.PNG)
 
 ## 3.4 ดิกชันนารี (Dictionary)
 
@@ -1354,13 +2124,7 @@ namespace DictionaryDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![d_1](./images/d_1.PNG)
 
 ### 3.4.2 การตรวจสอบสมาชิกในดิกชันนารีด้วยเมธอด ContainsKey()
 
@@ -1406,13 +2170,7 @@ namespace DictionaryDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![d_2](./images/d_2.PNG)
 
 ### 3.4.3 การลบสมาชิกในดิกชันนารีด้วยเมธอด Remove()
 
@@ -1463,13 +2221,7 @@ namespace DictionaryDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![d_3](./images/d_3.PNG)
 
 ## แบบฝึกหัด
 
@@ -1483,7 +2235,574 @@ namespace DictionaryDemo
     <tr><td>pdf</td><td>acrobat.exe</td></tr>
 </table>
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace DictionaryDemo
+{
+    class Program
+    {
+        static void Main()
+        {
+            Dictionary<string, string> Tfile = new Dictionary<string, string>();
+            Tfile.Add("txt", "Notepad.exe");
+            Tfile.Add("bmp", "paint.exe");
+            Tfile.Add("rtf", "wordpad.exe");
+            Tfile.Add("pdf", "acrobat.exe");
+
+            foreach(var item in Tfile)
+                Console.WriteLine($"{item.Key} => {item.Value}");
+            Console.WriteLine();
+
+            Console.Write("Enter type file: ");
+            string type = Console.ReadLine().ToLower();
+
+            foreach (var item in Tfile)
+            {
+                if (type.Equals(item.Key))
+                    Process.Start(item.Value);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![d3_ex1](./images/d3_ex1.PNG)
+
 2. จงเขียนโปรแกรมโดยใช้ dictionary เก็บชื่อประเทศในโลก โดยใช้ชื่อย่อเป็น key ในการค้นหา เช่น เมื่อผู้ใช้กรอก อักษรย่อ TH โปรแกรมก็ต้องบอกได้ว่าเป็นประเทศ Thailand เป็นต้น (ใช้ชื่อประเทศและอักษรย่อจากตัวอย่างที่ผ่านๆ มา)
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+namespace lab08
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Dictionary<string, string> country = new Dictionary<string, string>();
+            
+            for (int i = 0; i < CountryArrays.Names.Length; i++)
+            {
+                country.Add(CountryArrays.Abbreviations[i], CountryArrays.Names[i]);
+            }
+
+            Console.Write("Enter Abbreviations country : ");
+            string ctry = Console.ReadLine().ToUpper();
+
+            foreach(var str in country)
+            {
+                if(ctry.Equals(str.Key))
+                    Console.WriteLine($"{str.Key} => {str.Value}");
+            }
+
+            Console.ReadLine();
+        }
+    }
+    static class CountryArrays
+    {
+        /// <summary>
+        /// Country names
+        /// </summary>
+        public static string[] Names = new string[]
+        {
+        "Afghanistan",
+        "Albania",
+        "Algeria",
+        "American Samoa",
+        "Andorra",
+        "Angola",
+        "Anguilla",
+        "Antarctica",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Aruba",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bermuda",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Bouvet Island",
+        "Brazil",
+        "British Indian Ocean Territory",
+        "Brunei Darussalam",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Cayman Islands",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Christmas Island",
+        "Cocos (Keeling) Islands",
+        "Colombia",
+        "Comoros",
+        "Congo",
+        "Congo, the Democratic Republic of the",
+        "Cook Islands",
+        "Costa Rica",
+        "Cote D'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Falkland Islands (Malvinas)",
+        "Faroe Islands",
+        "Fiji",
+        "Finland",
+        "France",
+        "French Guiana",
+        "French Polynesia",
+        "French Southern Territories",
+        "Gabon",
+        "Gambia",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Gibraltar",
+        "Greece",
+        "Greenland",
+        "Grenada",
+        "Guadeloupe",
+        "Guam",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Heard Island and Mcdonald Islands",
+        "Holy See (Vatican City State)",
+        "Honduras",
+        "Hong Kong",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran, Islamic Republic of",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, Democratic People's Republic of",
+        "Korea, Republic of",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Lao People's Democratic Republic",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libyan Arab Jamahiriya",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macao",
+        "Macedonia, the Former Yugoslav Republic of",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Martinique",
+        "Mauritania",
+        "Mauritius",
+        "Mayotte",
+        "Mexico",
+        "Micronesia, Federated States of",
+        "Moldova, Republic of",
+        "Monaco",
+        "Mongolia",
+        "Montserrat",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "Netherlands Antilles",
+        "New Caledonia",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Niue",
+        "Norfolk Island",
+        "Northern Mariana Islands",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Palestinian Territory, Occupied",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Pitcairn",
+        "Poland",
+        "Portugal",
+        "Puerto Rico",
+        "Qatar",
+        "Reunion",
+        "Romania",
+        "Russian Federation",
+        "Rwanda",
+        "Saint Helena",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Pierre and Miquelon",
+        "Saint Vincent and the Grenadines",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia and Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "South Georgia and the South Sandwich Islands",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Svalbard and Jan Mayen",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syrian Arab Republic",
+        "Taiwan, Province of China",
+        "Tajikistan",
+        "Tanzania, United Republic of",
+        "Thailand",
+        "Timor-Leste",
+        "Togo",
+        "Tokelau",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Turks and Caicos Islands",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States",
+        "United States Minor Outlying Islands",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Venezuela",
+        "Viet Nam",
+        "Virgin Islands, British",
+        "Virgin Islands, US",
+        "Wallis and Futuna",
+        "Western Sahara",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+        };
+
+        /// <summary>
+        /// Country abbreviations
+        /// </summary>
+        public static string[] Abbreviations = new string[]
+        {
+        "AF",
+        "AL",
+        "DZ",
+        "AS",
+        "AD",
+        "AO",
+        "AI",
+        "AQ",
+        "AG",
+        "AR",
+        "AM",
+        "AW",
+        "AU",
+        "AT",
+        "AZ",
+        "BS",
+        "BH",
+        "BD",
+        "BB",
+        "BY",
+        "BE",
+        "BZ",
+        "BJ",
+        "BM",
+        "BT",
+        "BO",
+        "BA",
+        "BW",
+        "BV",
+        "BR",
+        "IO",
+        "BN",
+        "BG",
+        "BF",
+        "BI",
+        "KH",
+        "CM",
+        "CA",
+        "CV",
+        "KY",
+        "CF",
+        "TD",
+        "CL",
+        "CN",
+        "CX",
+        "CC",
+        "CO",
+        "KM",
+        "CG",
+        "CD",
+        "CK",
+        "CR",
+        "CI",
+        "HR",
+        "CU",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "DM",
+        "DO",
+        "EC",
+        "EG",
+        "SV",
+        "GQ",
+        "ER",
+        "EE",
+        "ET",
+        "FK",
+        "FO",
+        "FJ",
+        "FI",
+        "FR",
+        "GF",
+        "PF",
+        "TF",
+        "GA",
+        "GM",
+        "GE",
+        "DE",
+        "GH",
+        "GI",
+        "GR",
+        "GL",
+        "GD",
+        "GP",
+        "GU",
+        "GT",
+        "GN",
+        "GW",
+        "GY",
+        "HT",
+        "HM",
+        "VA",
+        "HN",
+        "HK",
+        "HU",
+        "IS",
+        "IN",
+        "ID",
+        "IR",
+        "IQ",
+        "IE",
+        "IL",
+        "IT",
+        "JM",
+        "JP",
+        "JO",
+        "KZ",
+        "KE",
+        "KI",
+        "KP",
+        "KR",
+        "KW",
+        "KG",
+        "LA",
+        "LV",
+        "LB",
+        "LS",
+        "LR",
+        "LY",
+        "LI",
+        "LT",
+        "LU",
+        "MO",
+        "MK",
+        "MG",
+        "MW",
+        "MY",
+        "MV",
+        "ML",
+        "MT",
+        "MH",
+        "MQ",
+        "MR",
+        "MU",
+        "YT",
+        "MX",
+        "FM",
+        "MD",
+        "MC",
+        "MN",
+        "MS",
+        "MA",
+        "MZ",
+        "MM",
+        "NA",
+        "NR",
+        "NP",
+        "NL",
+        "AN",
+        "NC",
+        "NZ",
+        "NI",
+        "NE",
+        "NG",
+        "NU",
+        "NF",
+        "MP",
+        "NO",
+        "OM",
+        "PK",
+        "PW",
+        "PS",
+        "PA",
+        "PG",
+        "PY",
+        "PE",
+        "PH",
+        "PN",
+        "PL",
+        "PT",
+        "PR",
+        "QA",
+        "RE",
+        "RO",
+        "RU",
+        "RW",
+        "SH",
+        "KN",
+        "LC",
+        "PM",
+        "VC",
+        "WS",
+        "SM",
+        "ST",
+        "SA",
+        "SN",
+        "CS",
+        "SC",
+        "SL",
+        "SG",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "ZA",
+        "GS",
+        "ES",
+        "LK",
+        "SD",
+        "SR",
+        "SJ",
+        "SZ",
+        "SE",
+        "CH",
+        "SY",
+        "TW",
+        "TJ",
+        "TZ",
+        "TH",
+        "TL",
+        "TG",
+        "TK",
+        "TO",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "TC",
+        "TV",
+        "UG",
+        "UA",
+        "AE",
+        "GB",
+        "US",
+        "UM",
+        "UY",
+        "UZ",
+        "VU",
+        "VE",
+        "VN",
+        "VG",
+        "VI",
+        "WF",
+        "EH",
+        "YE",
+        "ZM",
+        "ZW"
+        };
+    };
+}
+```
+
+![d3_ex2](./images/d3_ex2.PNG)
 
 ## 3.5 แฮชเทเบิล (HashTable)
 
@@ -1531,13 +2850,7 @@ namespace HashTableDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![h_1](./images/h_1.PNG)
 
 ### 3.5.2 การตรวจสอบสมาชิกในแฮชเทเบิลด้วยเมธอด ContainsKey() และ ContainsValue()
 
@@ -1576,13 +2889,7 @@ namespace HashTableDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![h_2](./images/h_2.PNG)
 
 ### 3.5.3 การลบสมาชิกและล้างข้อมูลในแฮชเทเบิลด้วยเมธอด Remove() และ Clear()
 
@@ -1635,15 +2942,147 @@ namespace HashTableDemo
 
 ➢ รันโปรแกรมและบันทึกผล ถ้ามีปัญหา แก้ไขอย่างไร อธิบายว่าเหตุใดจึงเป็นเช่นนั้น
 
-``` text
-
-บันทึกผลการทดลอง
-
-
-
-```
+![h_3](./images/h_3.PNG)
 
 ## คำถาม
 
 1. ให้สร้างแฮชเทเบิล ที่บรรจุรหัสไปรษณีย์และชื่อจังหวัด  (ทำในระดับจังหวัดเท่านั้น) แล้วค้นหาจากรหัสไปรษณีย์ที่กำหนด
+
+```csharp
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace lab08
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string sprovide ,lsprovide = null;
+            string snumpost ,lsnumpost = null;
+            int numpost;
+
+            Hashtable Provide = new Hashtable();
+
+
+            StreamReader fprovide = null;
+            StreamReader fnumpost = null;
+
+            try
+            {
+                fprovide = new StreamReader("./provide.txt");//file form folder bin
+                fnumpost = new StreamReader("./numpost.txt");
+                while (((sprovide = fprovide.ReadLine().ToString()) != "...") && ((snumpost = fnumpost.ReadLine().ToString()) != "..."))
+                {
+                    if (snumpost.Equals(lsnumpost))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Provide.Add(snumpost, sprovide);
+                        //Console.WriteLine($"{sprovide} => {snumpost}");
+                        //lsprovide = sprovide;
+                        lsnumpost = snumpost;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        insert:
+            try
+            {
+                Console.Write("Enter Postcode : ");
+                numpost = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                goto insert;
+            }
+
+            foreach (DictionaryEntry dicprovide in Provide)
+            {
+                if (dicprovide.Key.Equals(numpost.ToString())) 
+                    Console.WriteLine(dicprovide.Key + "   -   " + dicprovide.Value);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+```
+
+![h1_ex1](./images/h1_ex1.PNG)
+
 2. ให้สร้างแฮชเทเบิล ที่บรรจุรหัสนักศึกษาและรายชื่อเพื่อนๆ ในห้องเรียน  (ทำในแขนงคอมพิวเตอร์เท่านั้น) แล้วค้นหาจากรหัสนักศึกษาที่กำหนด
+
+```csharp
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace lab08
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string sname = null;
+            string sid = null;
+            int id;
+
+            Hashtable student = new Hashtable();
+
+
+            StreamReader fname = null;
+            StreamReader fid = null;
+
+            try
+            {
+                fname = new StreamReader("./name.txt");//file form folder bin
+                fid = new StreamReader("./id.txt");
+                while (((sname = fname.ReadLine().ToString()) != ".") && ((sid = fid.ReadLine().ToString()) != "."))
+                {
+                        student.Add(sid, sname);
+                        Console.WriteLine($"{sname} => {sid}");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            Console.WriteLine(  );
+        insert:
+            try
+            {
+                Console.Write("Enter Postcode : ");
+                id = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                goto insert;
+            }
+            Console.WriteLine(  );
+            foreach (DictionaryEntry dicstudent in student)
+            {
+                if (dicstudent.Key.Equals(id.ToString())) 
+                    Console.WriteLine(dicstudent.Key + "    " + dicstudent.Value);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+![h1_ex2](./images/h1_ex2.PNG)
