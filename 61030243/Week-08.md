@@ -1288,7 +1288,7 @@ namespace MultidimensionalArray
 string[,] charecter = new string[26,2];
 
 //ข้อ 3
-int[,] day = new int[12,2];
+int[,] day = new int[12,1];
 
 //ข้อ 4
 float[,,] cube = new float[3,3,3];
@@ -1328,6 +1328,7 @@ namespace MultidimensionalArray
 ```
 
 ![mul1_ex2](./images/mul1_ex2.PNG)
+
 ## 2.4 อาร์เรย์ของอาเรย์ (jagged array)
 
 อาร์เรย์ของอาเรย์จะมีลักษณะต่างจากอาร์เรย์หลายมิติที่เราศึกษาไปในหัวข้อ 2.3  
@@ -1465,9 +1466,367 @@ namespace ArrayOfArray
 
 2. สร้าง Jagged array ที่บรรจุชื่อประเทศต่างๆ แบ่งตามพื้นที่ทวีป โดยอ้างอิงจาก รายชื่อประเทศ ดินแดน และเมืองหลวง
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Array0fArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[][,] JGinter = new string[7][,]
+            {
+                new string[,] {
+
+                    {"Cambodia","Phnom Penh"}
+                    ,{"Qatar","Doha"}
+                    ,{"South Korea","Seoul"}
+                    ,{"North Korea","Pyongyang"}
+                    ,{"Kazakhstan","Nur-Sultan"}
+                    ,{"Kyrgyzstan","Bishkek"}
+                    ,{"Kuwait","Kuwait City"}
+                    ,{"Georgia","Tbilisi"}
+                    ,{"Jordan","Amman"}
+                    ,{"China","Beijing"}
+                    ,{"Saudi Arabia","Riyadh"}
+                    ,{"Syria","Damascus"}
+                    ,{"Cyprus","Nicosia"}
+                    ,{"Japan","Tokyo"}
+                    ,{"Timor-Leste","Dili"}
+                    ,{"Turkey","Ankara"}
+                    ,{"Turkmenistan","Ashgabat"}
+                    ,{"Tajikistan","Dushanbe"}
+                    ,{"Thailand","Bangkok"}
+                    ,{"Nepal","Kathmandu"}
+                    ,{"Brunei","Bandar Seri Begawan"}
+                    ,{"Bangladesh","Dhaka"}
+                    ,{"Bahrain","Manama"}
+                    ,{"Pakistan","Islamabad"}
+                    ,{"Palestine","Jerusalem"}
+                    ,{"Myanmar","Nay Pyi Taw"}
+                    ,{"Philippines","Manila"}
+                    ,{"Bhutan","Thimphu"}
+                    ,{"Mongolia","Ulan Bator"}
+                    ,{"Maldives","Malé"}
+                    ,{"Malaysia","Kuala Lumpur"}
+                    ,{"Yemen","Sana'a"}
+                    ,{"Laos","Vientiane"}
+                    ,{"Lebanon","Beirut"}
+                    ,{"Vietnam","Hanoi"}
+                    ,{"Sri Lanka","Sri Jayawardenepura Kotte"}
+                    ,{"United Arab Emirates","Abu Dhabi"}
+                    ,{"Singapore","Singapore"}
+                    ,{"Afghanistan","Kabul"}
+                    ,{"Azerbaijan","Baku"}
+                    ,{"Armenia","Yerevan"}
+                    ,{"India","New Delhi"}
+                    ,{"Indonesia","Jakarta"}
+                    ,{"Iraq","Baghdad"}
+                    ,{"Israel","Jerusalem"}
+                    ,{"Iran","Tehran"}
+                    ,{"Uzbekistan","Tashkent"}
+                    ,{"georgia","Muscat"}
+
+                },
+                new string[,] {
+                    {"Kiribati","Tarawa"}
+                    ,{"Samoa","Apia"}
+                    ,{"Tonga","Nukuʻalofa"}
+                    ,{"Tuvalu","Funafuti"}
+                    ,{"Nauru","–"}
+                    ,{"New Zealand","Wellington"}
+                    ,{"Papua New Guinea","Port Moresby"}
+                    ,{"Palau","Melekeok"}
+                    ,{"Fiji","Suva"}
+                    ,{"Micronesia","Palikir"}
+                    ,{"Vanuatu","Port Vila"}
+                    ,{"Solomon Islands","Honiara"}
+                    ,{"Marshall Islands","Majuro"}
+                    ,{"Australia","Canberra"}
+
+                },
+                new string[,] {
+                    {"Greece","Athens"}
+                    ,{"Kosovo","Pristina"}
+                    ,{"Croatia","Zagreb"}
+                    ,{"Czechia","Prague"}
+                    ,{"San Marino","San Marino"}
+                    ,{"Serbia","Belgrade"}
+                    ,{"Denmark","Copenhagen"}
+                    ,{"Vatican City State","Vatican"}
+                    ,{"North Macedonia","Skopje"}
+                    ,{"Norway","Oslo"}
+                    ,{"Netherlands","Amsterdam"}
+                    ,{"Bosnia and Herzegovina","Sarajevo"}
+                    ,{"Bulgaria","Sofia"}
+                    ,{"Belgium","Brussels"}
+                    ,{"Belarus","Minsk"}
+                    ,{"Portugal","Lisbon"}
+                    ,{"Poland","Warsaw"}
+                    ,{"France","Paris"}
+                    ,{"Finland","Helsinki"}
+                    ,{"Montenegro","Podgorica"}
+                    ,{"Moldova","Chișinău"}
+                    ,{"Malta","Valletta"}
+                    ,{"Monaco","Monaco"}
+                    ,{"Ukraine","Kiev"}
+                    ,{"Germany","Berlin"}
+                    ,{"Russia","Moscow"}
+                    ,{"Romania","Bucharest"}
+                    ,{"Luxembourg","Luxembourg"}
+                    ,{"Latvia","Riga"}
+                    ,{"Liechtenstein","Vaduz"}
+                    ,{"Lithuania","Vilnius"}
+                    ,{"Spain","Madrid"}
+                    ,{"Slovakia","Bratislava"}
+                    ,{"Slovenia","Ljubljana"}
+                    ,{"Switzerland","Bern"}
+                    ,{"Sweden","Stockholm"}
+                    ,{"United Kingdom","London"}
+                    ,{"Austria","Vienna"}
+                    ,{"Andorra","Andorra la Vella"}
+                    ,{"Italy","Rome"}
+                    ,{"Estonia","Tallinn"}
+                    ,{"Albania","Tirana"}
+                    ,{"Iceland","Reykjavík"}
+                    ,{"Ireland","Dublin"}
+                    ,{"Hungary","Budapest"}
+
+                },
+                new string[,] {
+                    {"Ghana","Accra"}
+                    ,{"Gabon","Libreville"}
+                    ,{"Cabo Verde","Praia"}
+                    ,{"Guinea","Conakry"}
+                    ,{"Guinea-Bissau","Bissau"}
+                    ,{"The Gambia","Banjul"}
+                    ,{"Côte d’Ivoire","Yamoussoukro"}
+                    ,{"Comoros","Moroni"}
+                    ,{"Kenya","Nairobi"}
+                    ,{"Cameroon","Yaoundé"}
+                    ,{"Djibouti","Djibouti"}
+                    ,{"Chad","N’Djamena"}
+                    ,{"Zimbabwe","Harare"}
+                    ,{"Sudan","Khartoum"}
+                    ,{"Seychelles","Victoria"}
+                    ,{"Senegal","Dakar"}
+                    ,{"São Tomé and Príncipe","São Tomé"}
+                    ,{"South Sudan","Juba"}
+                    ,{"Sierra Leone","Freetown"}
+                    ,{"Zambia","Lusaka"}
+                    ,{"Somalia","Mogadishu"}
+                    ,{"Tunisia","Tunis"}
+                    ,{"Togo","Lomé"}
+                    ,{"Tanzania","Dodoma"}
+                    ,{"Namibia","Windhoek"}
+                    ,{"Nigeria","Abuja"}
+                    ,{"Niger","Niamey"}
+                    ,{"Botswana","Gaborone"}
+                    ,{"Burundi","Gitega"}
+                    ,{"Burkina Faso","Ouagadougou"}
+                    ,{"Benin","Porto-Novo"}
+                    ,{"Mauritius","Port Louis"}
+                    ,{"Mauritania","Nouakchott"}
+                    ,{"Madagascar","Antananarivo"}
+                    ,{"Malawi","Lilongwe"}
+                    ,{"Mali","Bamako"}
+                    ,{"Mozambique","Maputo"}
+                    ,{"Morocco","Rabat"}
+                    ,{"Uganda","Kampala"}
+                    ,{"Rwanda","Kigali"}
+                    ,{"Libya","Tripoli"}
+                    ,{"Lesotho","Maseru"}
+                    ,{"Liberia","Monrovia"}
+                    ,{"Republic of the Congo","Brazzaville"}
+                    ,{"Democratic Republic of the Congo","Kinshasa"}
+                    ,{"Central African Republic","Bangui"}
+                    ,{"Equatorial Guinea","Malabo"}
+                    ,{"Egypt","Cairo"}
+                    ,{"Ethiopia","Addis Ababa"}
+                    ,{"Eritrea","Asmara"}
+                    ,{"Eswatini","Mbabane"}
+                    ,{"Angola","Luanda"}
+                    ,{"South Africa","Pretoria"}
+                    ,{"Algeria","Algiers"}
+                },
+                new string[,] {
+                    {"Guatemala","Guatemala City"}
+                    ,{"Grenada","Saint George’s"}
+                    ,{"Costa Rica","San José"}
+                    ,{"Cuba","Havana"}
+                    ,{"Canada","Ottawa"}
+                    ,{"Jamaica","Kingston"}
+                    ,{"Saint Kitts and Nevis","Basseterre"}
+                    ,{"Saint Lucia","Castries"}
+                    ,{"Saint Vincent and the Grenadines","Kingstown"}
+                    ,{"Dominica","Roseau"}
+                    ,{"Nicaragua","Managua"}
+                    ,{"Barbados","Bridgetown"}
+                    ,{"Bahamas","Nassau"}
+                    ,{"Belize","Belmopan"}
+                    ,{"Panama","Panama City"}
+                    ,{"Mexico","Mexico City"}
+                    ,{"United States","Washington, D.C."}
+                    ,{"Dominican Republic","Santo Domingo"}
+                    ,{"El Salvador","San Salvador"}
+                    ,{"Antigua and Barbuda","Saint John’s"}
+                    ,{"Honduras","Tegucigalpa"}
+                    ,{"Haiti","Port-au-Prince"}
+                },
+                new string[,] {
+                    {"Guyana","Georgetown"}
+                    ,{"Colombia","Bogotá"}
+                    ,{"Chile","Santiago"}
+                    ,{"Suriname","Paramaribo"}
+                    ,{"Trinidad and Tobago","Port of Spain"}
+                    ,{"Brazil","Brasília"}
+                    ,{"Bolivia","Sucre"}
+                    ,{"Paraguay","Asunción"}
+                    ,{"Peru","Lima"}
+                    ,{"Venezuela","Caracas"}
+                    ,{"Argentina","Buenos Aires"}
+                    ,{"Uruguay","Montevideo"}
+                    ,{"Ecuador","Quito"}
+                },
+                new string[,] {
+                    {"Greenland","Nuuk"}
+                    ,{"Guam","Hagåtña"}
+                    ,{"Guadeloupe","Basse-Terre"}
+                    ,{"Curaçao","Willemstad"}
+                    ,{"Clipperton Island","–"}
+                    ,{"Christmas Island","–"}
+                    ,{"Jarvis Island","–"}
+                    ,{"Serranilla Bank","–"}
+                    ,{"South Georgia and the South Sandwich Islands","–"}
+                    ,{"Norfolk Island","Kingston"}
+                    ,{"Navassa Island","–"}
+                    ,{"Bouvet Island","–"}
+                    ,{"Baker Island","–"}
+                    ,{"Peter I Island","–"}
+                    ,{"Wake Island","–"}
+                    ,{"Howland Island","–"}
+                    ,{"Heard Island and McDonald Islands","–"}
+                    ,{"Guernsey","Saint Peter Port"}
+                    ,{"Queen Maud Land","–"}
+                    ,{"Kosovo","Pristina"}
+                    ,{"Kingman Reef","–"}
+                    ,{"Johnston Atoll","–"}
+                    ,{"Jersey","Saint Helier"}
+                    ,{"Chilean Antarctic Territory","–"}
+                    ,{"Sint Maarten","Philipsburg"}
+                    ,{"Saint Helena, Ascension,","Jamestown"}
+                    ,{"Ceuta","–"}
+                    ,{"Saint Barthélemy","Gustavia"}
+                    ,{"Saint Martin","Marigot"}
+                    ,{"Saint Pierre and Miquelon","Saint-Pierre"}
+                    ,{"Taiwan","–"}
+                    ,{"Tokelau","–"}
+                    ,{"Nagorno-Karabakh","–"}
+                    ,{"New Caledonia","Nouméa"}
+                    ,{"Niue","Alofi"}
+                    ,{"Netherlands","Amsterdam"}
+                    ,{"British Indian Ocean Territory","–"}
+                    ,{"British Antarctic Territory","–"}
+                    ,{"Bajo Nuevo Bank","–"}
+                    ,{"Bermuda","Hamilton"}
+                    ,{"Puerto Rico","San Juan"}
+                    ,{"Palmyra Atoll","–"}
+                    ,{"French Guiana","Cayenne"}
+                    ,{"French Southern and Antarctic Lands","–"}
+                    ,{"French Polynesia","Papeete"}
+                    ,{"Montserrat","Plymouth"}
+                    ,{"Madeira","Funchal"}
+                    ,{"Mayotte","Mamoudzou"}
+                    ,{"Martinique","Fort-de-France"}
+                    ,{"Midway Atoll","–"}
+                    ,{"Melilla","–"}
+                    ,{"Jan Mayen","–"}
+                    ,{"Gibraltar","Gibraltar"}
+                    ,{"Ross Dependency","–"}
+                    ,{"Réunion","Saint-Denis"}
+                    ,{"Wallis and Futuna","Mata-Utu"}
+                    ,{"Western Sahara","–"}
+                    ,{"Svalbard","Longyearbyen"}
+                    ,{"Coral Sea Islands","–"}
+                    ,{"Canary Islands","Las Palmas de Gran Canaria"}
+                    ,{"Cook Islands","Avarua"}
+                    ,{"Cayman Islands","George Town"}
+                    ,{"Cocos (Keeling) Islands","–"}
+                    ,{"Turks and Caicos Islands","Cockburn Town"}
+                    ,{"Northern Mariana Islands","Saipan"}
+                    ,{"British Virgin Islands","Road Town"}
+                    ,{"Pitcairn Islands","Adamstown"}
+                    ,{"Falkland Islands","Stanley"}
+                    ,{"Faroe Islands","Tórshavn"}
+                    ,{"United States Virgin Islands","Charlotte Amalie"}
+                    ,{"Ashmore and Cartier Islands","–"}
+                    ,{"American Samoa","Pago Pago"}
+                    ,{"Australian Antarctic Territory","–"}
+                    ,{"Azores","Ponta Delgada"}
+                    ,{"Argentine Antarctica","–"}
+                    ,{"Aruba","Oranjestad"}
+                    ,{"Akrotiri and Dhekelia","Episkopi Cantonment"}
+                    ,{"Anguilla","The Valley"}
+                    ,{"Isle of Man","Douglas"}
+                }
+            };
+
+            for (int row = 0, cnt = 0; row < JGinter.GetLength(0); row++, cnt++) 
+            {
+                switch (cnt)
+                {
+                    case 0:
+                        Console.WriteLine("Asia");
+                        break;
+                    case 1:
+                        Console.WriteLine("Oceania");
+                        break;
+                    case 2:
+                        Console.WriteLine("Europe");
+                        break;
+                    case 3:
+                        Console.WriteLine("Africa");
+                        break;
+                    case 4:
+                        Console.WriteLine("North America");
+                        break;
+                    case 5:
+                        Console.WriteLine("South America");
+                        break;
+                    case 6:
+                        Console.WriteLine("Region");
+                        break;
+
+                }
+                //Console.WriteLine(row);
+                for (int col = 0; col < JGinter[row].GetLength(0); col++)
+                {
+                    //Console.WriteLine(col);
+                    for (int index = 0; index < JGinter[row].GetLength(1); index++)
+                    {
+                        Console.Write("{0} {1}\n" , index == 0 ? "Country" : "City" ,JGinter[row][col, index]);
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine("\n");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+![jg1_ex2](./images/jg1_ex2.PNG)
 ## 3. Collection
 
-ถึงแม้ว่าเราจะสามารถใช้งานอาร์เรย์ในการเก็บและจัดการกับข้อมูล แต่การใช้อาร์เรย์ก็มีข้อจำกัดหลายๆ อย่าง เช่น อาร์เรย์เป็นหน่วยเก็บข้อมูลที่มีขนาดคงที่ ซึ่งถูกกำหนดในขณะสร้างอาร์เรย์ อีกทั้งสมาชิกในอาร์เรย์จะต้องเป็นข้อมูลชนิดเดียวกันเท่านั้น ซึ่งก็ต้องระบุในขณะสร้าง��าร์เรย์เช่นกัน ดังนั้นในการพัฒนา .NET Framework Class Library (FCL) จึงได้มีการจัดเตรียมคลาสที่เป็น collection ที่ทำงานกับโครงสร้างข้อมูลแบบต่างๆ ซึ่งอยู่ในเนมสเปซที่ชื่อ  System.Collection
+ถึงแม้ว่าเราจะสามารถใช้งานอาร์เรย์ในการเก็บและจัดการกับข้อมูล แต่การใช้อาร์เรย์ก็มีข้อจำกัดหลายๆ อย่าง เช่น อาร์เรย์เป็นหน่วยเก็บข้อมูลที่มีขนาดคงที่ ซึ่งถูกกำหนดในขณะสร้างอาร์เรย์ อีกทั้งสมาชิกในอาร์เรย์จะต้องเป็นข้อมูลชนิดเดียวกันเท่านั้น ซึ่งก็ต้องระบุในขณะสร้างอาร์เรย์เช่นกัน ดังนั้นในการพัฒนา .NET Framework Class Library (FCL) จึงได้มีการจัดเตรียมคลาสที่เป็น collection ที่ทำงานกับโครงสร้างข้อมูลแบบต่างๆ ซึ่งอยู่ในเนมสเปซที่ชื่อ  System.Collection
 ตารางต่อไปนี้แสดง collection class ที่ใช้งานบ่อย
 
 ![](./images/table-08-04.png)
