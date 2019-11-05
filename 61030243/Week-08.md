@@ -2198,8 +2198,7 @@ namespace QueueDemo
 
             Console.WriteLine("The elements in the queue are:" + queue1.Count);
             queue1.Clear();
-            Console.WriteLine("The elements in the queue are after the clear
- method:" + queue1.Count);
+            Console.WriteLine("The elements in the queue are after the clearmethod:" + queue1.Count);
             Console.ReadLine();
         }
     }
