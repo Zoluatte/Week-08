@@ -12,14 +12,12 @@ namespace lab08
         {
 
             int[] data = new int[10];
-            data[-1] = 0;
-            data[1] = 1;
-            data[9] = 9;
-            data[10] = 10;
-            Console.WriteLine(data[-1]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[9]);
-            Console.WriteLine(data[10]);
+            data[3] =3;
+            data[8] = 8;
+
+            Console.WriteLine(data[3]+ data[8]);
+            
+            
             Console.ReadLine();
 
         }
