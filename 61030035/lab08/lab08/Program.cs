@@ -10,31 +10,33 @@ namespace lab08
     {
         static void Main(string[] args)
         {
-            int[] data = new int[10];
-            data[0] = 0;
-            data[1] = 1;
-            data[2] = 2;
-            data[3] = 3;
-            data[4] = 4;
-            data[5] = 5;
-            data[6] = 6;
-            data[7] = 7;
-            data[8] = 8;
-            data[9] = 9;
-            
-            Console.WriteLine(data[0]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[2]);
-            Console.WriteLine(data[3]);
-            Console.WriteLine(data[4]);
-            Console.WriteLine(data[5]);
-            Console.WriteLine(data[6]);
-            Console.WriteLine(data[7]);
-            Console.WriteLine(data[8]);
-            Console.WriteLine(data[9]);
-           
+
+            int[] province = new int[77];
+            province[0] = 0;
+            province[1] = 1;
+            province[2] = 2;
+            province[3] = 3;
+            province[4] = 4;
+            province[5] = 5;
+            province[6] = 6;
+            province[7] = 7;
+            province[8] = 8;
+            province[9] = 9;
+            province[10] = 10;
+            Console.WriteLine(province[0]);
+            Console.WriteLine(province[1]);
+            Console.WriteLine(province[2]);
+            Console.WriteLine(province[3]);
+            Console.WriteLine(province[4]);
+            Console.WriteLine(province[5]);
+            Console.WriteLine(province[6]);
+            Console.WriteLine(province[7]);
+            Console.WriteLine(province[8]);
+            Console.WriteLine(province[9]);
+            Console.WriteLine(province[10]);
             Console.ReadLine();
 
         }
+        
     }
 }
