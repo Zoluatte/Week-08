@@ -1,7 +1,0 @@
-C:\Users\User\Week-08\61030035\Lab8\Lab8\bin\Debug\Lab8.exe.config
-C:\Users\User\Week-08\61030035\Lab8\Lab8\bin\Debug\Lab8.exe
-C:\Users\User\Week-08\61030035\Lab8\Lab8\bin\Debug\Lab8.pdb
-C:\Users\User\Week-08\61030035\Lab8\Lab8\obj\Debug\Lab8.csprojAssemblyReference.cache
-C:\Users\User\Week-08\61030035\Lab8\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
-C:\Users\User\Week-08\61030035\Lab8\Lab8\obj\Debug\Lab8.exe
-C:\Users\User\Week-08\61030035\Lab8\Lab8\obj\Debug\Lab8.pdb
