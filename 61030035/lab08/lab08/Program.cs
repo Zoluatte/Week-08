@@ -10,21 +10,22 @@ namespace lab08
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("LAND");
-            Console.WriteLine(string.Join("\n", Array.FindAll(CountryArrays.Names, ele => ele.EndsWith("land"))));
-            Console.WriteLine();
-            Console.WriteLine("STAN");
-            Console.WriteLine(string.Join("\n", Array.FindAll(CountryArrays.Names, ele => ele.EndsWith("stan"))));
 
-            Console.Read();
+            //var sort = from x CountryArrays.Name
+            //                   orderby x.Length descending, x descending
+            //                     select x;
+            var sort = from x in CountryArrays.Names
+                       orderby x.Length descending, x
+                       select x;
+            foreach (string str in sort)
+            {
+                Console.WriteLine(str);
+            }
+            Console.ReadLine();
         }
-    }
-    static class CountryArrays
-    {
-        /// <summary>
-        /// Country names
-        /// </summary>
-        public static string[] Names = new string[]
+        static class CountryArrays
+        { 
+            public static string[]Names = new string[]
              {
         "Afghanistan",
         "Albania",
@@ -265,7 +266,7 @@ namespace lab08
         "Yemen",
         "Zambia",
         "Zimbabwe",
-        };
+    };
 
         /// <summary>
         /// Country abbreviations
@@ -514,5 +515,5 @@ namespace lab08
         };
     };
 }
-    
+    }
 
