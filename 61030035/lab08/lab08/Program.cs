@@ -11,23 +11,44 @@ namespace lab08
     {
         static void Main(string[] args)
         {
-            Hashtable weeks = new Hashtable();
-            weeks.Add("1", "Sunday");
-            weeks.Add("2", "Monday");
-            weeks.Add("3", "Tuesday");
-            weeks.Add("4", "Wednesday");
-            weeks.Add("5", "Thursday");
-            weeks.Add("6", "Friday");
-            weeks.Add("7", "Saturday");
+            Hashtable north = new Hashtable();
+            north.Add("50000", "CHIANGMAI");
+            north.Add("20000", "LAMPANG");
+            north.Add("64000", "SUKHOTHAI");
+            north.Add("61000", "UTHAITHANI");
+            north.Add("55000", "NAN");
+            north.Add("65000", "PHITSANULOK");
+            north.Add("54000", "PHRAE");
+            north.Add("58000", "MAEHONGSON");
+            north.Add("57000", "CHIANGRAI");
+            north.Add("63000", "TAK");
 
-            // Method ContainKey()
-            Console.WriteLine("The  key element \"8\" is contain in the Hashtable weeks : " + weeks.ContainsKey("8"));
+            foreach (DictionaryEntry pcn in north)
+               {
+                
+                    Console.WriteLine($"{pcn.Key} => {pcn.Value}");
+            }
+            Console.WriteLine();
 
-            // Method ContainValue()
-            Console.WriteLine("The  key element \"Wednesday\" is contain in the Hashtable weeks : " + weeks.ContainsValue("Wednesday"));
+            Console.WriteLine("Enter PostCode North :");
+            string n = Console.ReadLine().ToUpper ();
+               
+
+            foreach(DictionaryEntry pnc in north)
+            {
+                if (pnc.Equals(pnc.Key))
+                    Console.WriteLine($"{pnc.Key} => {pnc.Value }");
+                       
+                   
+
+            }
+         
+
 
             Console.ReadLine();
-        }
+
+            }
+        
     }
 }
                 
