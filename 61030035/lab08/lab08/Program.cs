@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +11,7 @@ namespace lab08
     {
         static void Main(string[] args)
         {
+
             ArrayList list1 = new ArrayList();
             list1.Add(1);
             list1.Add(2);
@@ -25,7 +26,6 @@ namespace lab08
             ArrayList list4 = new ArrayList(list2);
             Console.WriteLine("list4 count = {0}, capacity = {1}", list4.Count, list4.Capacity);
             Console.ReadLine();
-
 
         }
     }
