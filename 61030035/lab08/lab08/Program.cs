@@ -13,17 +13,15 @@ namespace lab08
             string[] month = {"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY",
                     "AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER",
             };
-            string[] month_er = Array.FindAll(month, ele => ele.EndsWith("ber"));
-            string[] copy_er = new string[month_er.Length];
-            Array.Copy(month_er, copy_er, month_er.Length);
-            string[] month_ry = Array.FindAll(month, ele => ele.EndsWith("ry"));
-            string[] copy_ry = new string[month_ry.Length];
-            Array.Copy(month_ry, copy_ry, month_ry.Length);
-            //foreach (string str in copy_er)
-            // Console.WriteLine(str);
+            string[] month_RY = Array.FindAll(month, element => element.EndsWith("RY"));
+            string[] copy_RY = new string[month_RY.Length];
+            Array.Copy(month_RY, copy_RY, month_RY.Length);
+            
 
-            foreach (string str in copy_ry)
-                Console.WriteLine(str);
+            foreach (string str in copy_RY)
+             Console.WriteLine(str);
+
+            
             Console.ReadLine();
         }
                 
