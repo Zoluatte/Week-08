@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Collections;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,24 +11,21 @@ namespace lab08
     {
         static void Main(string[] args)
         {
+            Hashtable weeks = new Hashtable();
+            weeks.Add("1", "Sunday");
+            weeks.Add("2", "Monday");
+            weeks.Add("3", "Tuesday");
+            weeks.Add("4", "Wednesday");
+            weeks.Add("5", "Thursday");
+            weeks.Add("6", "Friday");
+            weeks.Add("7", "Saturday");
 
-            Stack<string> stack1 = new Stack<string>();
-            stack1.Push("************");
-            stack1.Push("RED");
-            stack1.Push("GREEN");
-            stack1.Push("BLUE");
-            stack1.Push("YELLOW");
-            stack1.Push("***********");
-            stack1.Push("** COLOR **");
-            stack1.Push("***********");
-            Console.WriteLine("The elements in the stack1 are as:");
-            foreach (string s in stack1)
-            {
-                Console.WriteLine(s);
-            }
-            Console.WriteLine("The element RED contain in the stack " + stack1.Contains("RED"));
-            Console.WriteLine("The element YELLOW contain in the stack " + stack1.Contains("YELLOW"));
-            Console.WriteLine("The element BLACK contain in the stack " + stack1.Contains("BLACK"));
+            // Method ContainKey()
+            Console.WriteLine("The  key element \"8\" is contain in the Hashtable weeks : " + weeks.ContainsKey("8"));
+
+            // Method ContainValue()
+            Console.WriteLine("The  key element \"Wednesday\" is contain in the Hashtable weeks : " + weeks.ContainsValue("Wednesday"));
+
             Console.ReadLine();
         }
     }
