@@ -12,21 +12,23 @@ namespace lab08
         static void Main(string[] args)
         {
 
-            Queue<string> queue1 = new Queue<string>();
-            queue1.Enqueue("Red");
-            queue1.Enqueue("Green");
-            queue1.Enqueue("Blue");
-            queue1.Enqueue("Orange");
-            queue1.Enqueue("Yellow");
-            Console.WriteLine("The elements in the queue are:");
-            foreach (string s in queue1)
+            Stack<string> stack1 = new Stack<string>();
+            stack1.Push("************");
+            stack1.Push("RED");
+            stack1.Push("GREEN");
+            stack1.Push("BLUE");
+            stack1.Push("YELLOW");
+            stack1.Push("***********");
+            stack1.Push("** COLOR **");
+            stack1.Push("***********");
+            Console.WriteLine("The elements in the stack1 are as:");
+            foreach (string s in stack1)
             {
                 Console.WriteLine(s);
             }
-            Console.WriteLine("The element Red is contain in the queue:" + queue1.Contains("Red"));
-            Console.WriteLine("The element Black is contain in the queue:" + queue1.Contains("Black"));
-            Console.WriteLine("The element Purple is contain in the queue:" + queue1.Contains("Purple"));
-            Console.WriteLine("The element Green is contain in the queue:" + queue1.Contains("Green"));
+            Console.WriteLine("The element RED contain in the stack " + stack1.Contains("RED"));
+            Console.WriteLine("The element YELLOW contain in the stack " + stack1.Contains("YELLOW"));
+            Console.WriteLine("The element BLACK contain in the stack " + stack1.Contains("BLACK"));
             Console.ReadLine();
         }
     }
