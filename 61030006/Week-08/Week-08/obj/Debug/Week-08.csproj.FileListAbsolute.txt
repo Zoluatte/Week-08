@@ -1,0 +1,7 @@
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\bin\Debug\Week-08.exe.config
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\bin\Debug\Week-08.exe
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\bin\Debug\Week-08.pdb
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\obj\Debug\Week-08.csprojAssemblyReference.cache
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\obj\Debug\Week-08.csproj.CoreCompileInputs.cache
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\obj\Debug\Week-08.exe
+C:\Users\asus\Week-08\61030006\Week-08\Week-08\obj\Debug\Week-08.pdb
