@@ -11,23 +11,28 @@ namespace Week_08
     {
         static void Main(string[] args)
         {
-            Stack<string> stack1 = new Stack<string>();
-            stack1.Push("************");
-            stack1.Push("RED");
-            stack1.Push("GREEN");
-            stack1.Push("BLUE");
-            stack1.Push("YELLOW");
-            stack1.Push("***********");
-            stack1.Push("** COLOR **");
-            stack1.Push("***********");
-            Console.WriteLine("The elements in the stack1 are as:");
-            foreach (string s in stack1)
+
+            Dictionary<string, int> dict1 = new Dictionary<string, int>();
+            dict1.Add("One", 1);
+            dict1.Add("Two", 2);
+            dict1.Add("Three", 3);
+            dict1.Add("Four", 4);
+            dict1.Add("Five", 5);
+            dict1.Add("Six", 6);
+            dict1.Add("Seven", 7);
+            dict1.Add("Eight", 8);
+            dict1.Add("Nine", 9);
+            dict1.Add("Ten", 10);
+            if (dict1.ContainsKey("One"))
             {
-                Console.WriteLine(s);
+                int value = dict1["One"];
+                Console.WriteLine(value);
             }
-            Console.WriteLine("The element RED contain in the stack " + stack1.Contains("RED"));
-            Console.WriteLine("The element YELLOW contain in the stack " + stack1.Contains("YELLOW"));
-            Console.WriteLine("The element BLACK contain in the stack " + stack1.Contains("BLACK"));
+            if (dict1.ContainsKey("Eleven"))
+            {
+                int value = dict1["Eleven"];
+                Console.WriteLine(value);
+            }
             Console.ReadLine();
         }
     }
