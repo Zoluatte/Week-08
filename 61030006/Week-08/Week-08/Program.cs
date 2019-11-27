@@ -11,42 +11,23 @@ namespace Week_08
     {
         static void Main(string[] args)
         {
-            Queue<int> q = new Queue<int>();
-            Console.WriteLine("-- enqueue 3 items -- ");
-            q.Enqueue(10);
-            q.Enqueue(20);
-            q.Enqueue(30);
-            Console.Write("Queue contains : ");
-            foreach (var item in q)
+            Stack<string> stack1 = new Stack<string>();
+            stack1.Push("************");
+            stack1.Push("RED");
+            stack1.Push("GREEN");
+            stack1.Push("BLUE");
+            stack1.Push("YELLOW");
+            stack1.Push("***********");
+            stack1.Push("** COLOR **");
+            stack1.Push("***********");
+            Console.WriteLine("The elements in the stack1 are as:");
+            foreach (string s in stack1)
             {
-                Console.Write(item + " ");
+                Console.WriteLine(s);
             }
-            Console.WriteLine(Environment.NewLine + "q.Count  = {0}", q.Count);
-            Console.WriteLine("q.Peek = {0}", q.Peek());
-
-            Console.WriteLine("-- enqueue more items -- ");
-            q.Enqueue(40);
-            q.Enqueue(50);
-
-            Console.Write("Queue contains : ");
-            foreach (var item in q)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine(Environment.NewLine + "q.Count  = {0}", q.Count);
-            Console.WriteLine("q.Peek = {0}", q.Peek());
-
-            Console.WriteLine("-- dequeue -- ");
-            int i = q.Dequeue();
-            Console.WriteLine("i = {0}", i);
-
-            Console.Write("Queue contains : ");
-            foreach (var item in q)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine(Environment.NewLine + "q.Count  = {0}", q.Count);
-            Console.WriteLine("q.Peek = {0}", q.Peek());
+            Console.WriteLine("The element RED contain in the stack " + stack1.Contains("RED"));
+            Console.WriteLine("The element YELLOW contain in the stack " + stack1.Contains("YELLOW"));
+            Console.WriteLine("The element BLACK contain in the stack " + stack1.Contains("BLACK"));
             Console.ReadLine();
         }
     }
