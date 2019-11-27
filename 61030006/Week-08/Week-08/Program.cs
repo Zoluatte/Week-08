@@ -10,15 +10,27 @@ namespace Week_08
     {
         static void Main(string[] args)
         {
-            int[] data = { 51, 58, 14, 20, -5, 61, 7, 21, 6 };
-            Console.WriteLine("Length of data = {0}", data.Length);
-            for (int i = 0; i < data.Length; i++)
+            int[] month = { 2, 5, 5, 1, 3, 6, 1, 4, 0, 2, 5, 0 };
+            string[] days =
             {
-                Console.WriteLine(data[i]);
-            }
-            Console.ReadLine();
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Tuesday",
+            "Friday",
+            "Saturday",            };
+            Console.Write("Enter date : ");
+            int date = int.Parse(Console.ReadLine());
+            Console.Write("Enter month: ");
+            int inmonth = int.Parse(Console.ReadLine());
 
-        
+            int day = (date + month[inmonth - 1] - 1) % 7;
+
+            Console.WriteLine($"{date}/{inmonth}/2561 is {days[day]}");
+            Console.Read();
+
+
         }
     }
 }
