@@ -21,7 +21,7 @@ namespace Week_08
             data[7] = 7;
             data[8] = 8;
             data[9] = 9;
-            data[10] = 10;
+            
             Console.WriteLine(data[0]);
             Console.WriteLine(data[1]);
             Console.WriteLine(data[2]);
@@ -32,7 +32,7 @@ namespace Week_08
             Console.WriteLine(data[7]);
             Console.WriteLine(data[8]);
             Console.WriteLine(data[9]);
-            Console.WriteLine(data[10]);
+            
             Console.ReadLine();
 
         }
