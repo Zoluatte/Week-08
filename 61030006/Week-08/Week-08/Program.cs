@@ -21,9 +21,19 @@ namespace Week_08
             data[7] = 7;
             data[8] = 8;
             data[9] = 9;
-            Console.WriteLine(data[4]);
-            Console.WriteLine(data[9]);
+            
+            
+            
+            foreach(int o in data)
+            {
+                Console.WriteLine(o);
+                
+                    
+                
+              
+            }
             Console.ReadLine();
+
         }
     }
 }
