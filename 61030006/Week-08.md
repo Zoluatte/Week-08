@@ -149,6 +149,14 @@ namespace ConsoleAppArray
 
 แบบฝึกหัดข้อที่1
 ![](image/3.JPG)
+แบบฝึกหัดข้อที่2
+```
+float[] stuGPA = new float[45];
+```
+แบบฝึกหัดข้อที่3
+```
+string[] province = new string[78];
+```
 
 ### 2.1.2 การอ้างถึงสมาชิกในอาร์เรย์
 
