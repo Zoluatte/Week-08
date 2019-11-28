@@ -12,33 +12,25 @@ namespace Week_08
     {
         static void Main(string[] args)
         {
-            Hashtable weeks = new Hashtable();
-            weeks.Add("1", "Sunday");
-            weeks.Add("2", "Monday");
-            weeks.Add("3", "Tuesday");
-            weeks.Add("4", "Wednesday");
-            weeks.Add("5", "Thursday");
-            weeks.Add("6", "Friday");
-            weeks.Add("7", "Saturday");
-
-            Console.WriteLine("---- elements in Hashtable weeks ----");
-            foreach (DictionaryEntry day in weeks)
+            Hashtable TH = new Hashtable();
+            TH.Add("71000", "Kanchanaburi");
+            TH.Add("40000", "Khon Kaen");
+            TH.Add("22000", "Chanthaburi");
+            TH.Add("20000", "Chonburi");
+            TH.Add("12000", "Pathum Thani");
+            
+           foreach (DictionaryEntry pcn in TH)
             {
-                Console.WriteLine(day.Key + "   -   " + day.Value);
+                Console.WriteLine($"{pcn.Key} => {pcn.Value}");
             }
+            Console.WriteLine();
+            Console.WriteLine("Enter PostCode :");
+            String n = Console.ReadLine().ToUpper();
 
-            Console.WriteLine("\n---- weeks.Remove(\"4\"); ----");
-            weeks.Remove("4");
-            foreach (DictionaryEntry day in weeks)
+            foreach (DictionaryEntry pnc in TH)
             {
-                Console.WriteLine(day.Key + "   -   " + day.Value);
-            }
-
-            Console.WriteLine("\n---- weeks.Clear(); ----");
-            weeks.Clear();
-            foreach (DictionaryEntry day in weeks)
-            {
-                Console.WriteLine(day.Key + "   -   " + day.Value);
+                if (n.Equals(pnc.Key))
+                    Console.WriteLine("{0}", pnc.Value);
             }
 
             Console.ReadLine();
