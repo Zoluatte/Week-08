@@ -2,4 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
+=======
+/61030035/Lab8/.vs/Lab8/v16/Server/sqlite3/db.lock
+>>>>>>> c85765dfde11faf2fa9f0eca7fe3304af79c5436
 *.lock
